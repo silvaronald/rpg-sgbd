@@ -248,7 +248,7 @@ CREATE TABLE Leque_habilidade (
   jogador VARCHAR(50),
   habilidade VARCHAR(50),
   nivel INT CHECK (nivel >= 1),
-  bonusTemporario INT
+  bonusTemporario INT,
   bonusEspecializacao INT,
   bonusClasse INT,
   
@@ -260,7 +260,7 @@ CREATE TABLE Leque_habilidade (
 CREATE TABLE Leque_ataque(
   jogador VARCHAR(50),
   ataque VARCHAR(50),
-  nivel INT CHEKC (nivel >= 1),
+  nivel INT CHECK (nivel >= 1),
   
   PRIMARY KEY (jogador, ataque),
   CONSTRAINT fk_leque_ataque_jogador FOREIGN KEY (jogador) REFERENCES Jogador(nome),
