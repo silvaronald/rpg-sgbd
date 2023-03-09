@@ -122,17 +122,6 @@ CREATE TABLE Habilidade (
   PRIMARY KEY (nome)
 );
 
-CREATE TABLE Loot (
-  atacante VARCHAR(50),
-  atacado VARCHAR(50),
-  data_hora TIMESTAMP,
-  item VARCHAR(50),
-  
-  PRIMARY KEY (atacante, atacado, data_hora, item),
-  CONSTRAINT fk_loot_batalha FOREIGN KEY (atacante, atacado, data_hora) REFERENCES Batalha(atacante, atacado, data_hora),
-  CONSTRAINT fk_loot_item FOREIGN KEY (item) REFERENCES Item(nome)
-);
-
 CREATE TABLE Fraquezas (
   jogador VARCHAR(50),
   fraqueza VARCHAR(250),
@@ -265,6 +254,17 @@ CREATE TABLE Leque_ataque(
   PRIMARY KEY (jogador, ataque),
   CONSTRAINT fk_leque_ataque_jogador FOREIGN KEY (jogador) REFERENCES Jogador(nome),
   CONSTRAINT fk_leque_ataque_nivel FOREIGN KEY (ataque, nivel) REFERENCES Nivel_ataque(nome, nivel)
+);
+
+CREATE TABLE Loot (
+  atacante VARCHAR(50),
+  atacado VARCHAR(50),
+  data_hora TIMESTAMP,
+  item VARCHAR(50),
+  
+  PRIMARY KEY (atacante, atacado, data_hora, item),
+  CONSTRAINT fk_loot_batalha FOREIGN KEY (atacante, atacado, data_hora) REFERENCES Batalha(atacante, atacado, data_hora),
+  CONSTRAINT fk_loot_item FOREIGN KEY (item) REFERENCES Item(nome)
 );
 
 -- Sequences
