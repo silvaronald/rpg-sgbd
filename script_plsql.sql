@@ -268,3 +268,37 @@ BEGIN
 		DBMS_OUTPUT.PUT_LINE(CHR(10));
     END LOOP;
 END;
+/
+-- Lista todas as missoes e seus objetivos
+DECLARE
+	TYPE missao_t IS TABLE OF missao%ROWTYPE;
+	TYPE objetivos_t IS TABLE OF objetivos.objetivo%TYPE;
+	v_missao missao_t;
+	v_objetivos objetivos_t;
+	i INTEGER := 1;
+	j INTEGER := 1;
+
+BEGIN
+
+		SELECT *
+		BULK COLLECT INTO v_missao
+		FROM missao;
+		
+		WHILE i <= v_missao.COUNT LOOP
+		    SELECT o.objetivo
+		    BULK COLLECT INTO v_objetivos
+		    FROM objetivos o
+		    WHERE o.missao = v_missao(i).nome;
+		
+		        DBMS_OUTPUT.PUT_LINE('Missão: ' || v_missao(i).nome);
+		        WHILE j <= v_objetivos.COUNT LOOP
+		            DBMS_OUTPUT.PUT_LINE(' -' || v_objetivos(j));
+		            j := j + 1;
+		        END LOOP;
+		
+		        DBMS_OUTPUT.PUT_LINE('');
+		        j := 1;
+		        i := i + 1;
+		END LOOP;
+END;
+/
