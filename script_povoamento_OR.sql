@@ -588,6 +588,85 @@ INSERT INTO Leque_habilidade_tb VALUES (
         140
     )
 );
+
+
+-- Missão 
+INSERT INTO MISSAO_TB
+    VALUES (MISSAO_TP('Missão Principal', 10, 55, 3,
+    OBJETIVOS_TP('Matar o dragão', 'Coletar recompensa', 'Sequestrar o padre')));
+INSERT INTO MISSAO_TB
+    VALUES (MISSAO_TP('Missão Secundária', 10, 55, 3,
+    OBJETIVOS_TP('Falar com o necromante', 'Pescar no Ibura', 'Comer a fruta misteriosa')));
+INSERT INTO MISSAO_TB
+    VALUES (MISSAO_TP('A missão do mestre Ronald', 10, 55, 3,
+    OBJETIVOS_TP('Montar no cavalo', 'Fazer a poção do primeiro amor')));
+INSERT INTO MISSAO_TB
+    VALUES (MISSAO_TP('Um segredo além da Terra', 10, 55, 3,
+    OBJETIVOS_TP('Obter benção da mestre Beatriz')));
+
+-- Arma
+INSERT INTO Arma_tb VALUES (Arma_tp('Espada Longa', 5, 200, 500, 10, 'COMUM', 30));
+INSERT INTO Arma_tb VALUES (Arma_tp('Lança do dragão', 25, 12, 123, 10, 'EPICO', 95));
+INSERT INTO Arma_tb VALUES (
+Arma_tp('Martelo do Caos (Cuidado, ele é do caos)', 65, 52, 400, 82, 'LENDARIO', 142)
+);
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Faca de manteiga', 1, 1, 1, 3, 'COMUM', 5));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Cetro clerical', 1, 100, 100, 10, 'COMUM', 20));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Cajado elementar', 1, 100, 100, 10, 'COMUM', 20));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Clava da justiça', 1, 100, 100, 10, 'COMUM', 20));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Espada sanguinária', 1, 100, 100, 10, 'COMUM', 20));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Cetro dos deuses antigos', 15, 10000, 9999, 35, 'LENDARIO', 150));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Cajado de Knaarr', 15, 10000, 10000, 35, 'LENDARIO', 150));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Porrete dos portões de Embiid', 15, 10000, 4872, 50, 'LENDARIO', 150));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Espada do andarilho esquecido', 15, 10000, 3500, 50, 'LENDARIO', 150));
+
+INSERT INTO Arma_tb 
+    VALUES (Arma_tp('Adaga da Regina Maledetta', 15, 10000, 2500, 20, 'LENDARIO', 150));
+
+-- Armadura
+INSERT INTO Armadura_tb
+	VALUES (Armadura_tp('Cota de malha', 1, 100, 100, 10, 'COMUM', 20));
+
+INSERT INTO Armadura_tb 
+    VALUES (Armadura_tp('Bandana do naruto', 5, 100, 100, 10, 'RARO', 35));
+
+INSERT INTO Armadura_tb 
+    VALUES (Armadura_tp('Armadura das fadas de Avalon', 15, 5000, 5000, 10, 'EPICO', 105));
+
+-- Consumível
+INSERT INTO Consumivel_tb
+    VALUES (Consumivel_tp('Poção de vida', 1, 10, 5, 10, 'COMUM', 'Cura em 50 pontos'));
+
+INSERT INTO Consumivel_tb
+    VALUES (Consumivel_tp('Poção de mana', 1, 5, 5, 10, 'COMUM', 'Restaura 50 pontos de mana'));
+
+INSERT INTO Consumivel_tb
+    VALUES (Consumivel_tp('Poção da invisibilidade', 1, 2500, 1000, 10, 'EPICO', 'Deixa o usuário invisível por 3 minutos'));
+
+INSERT INTO Consumivel_tb
+    VALUES (Consumivel_tp('Poção felix felicius', 1, 2500, 2500, 10, 'EPICO', 'Sua sorte será inigualável por um dia inteiro'));
+
+INSERT INTO Consumivel_tb
+    VALUES (Consumivel_tp('Poção do caos', 1, 7500, 7500, 10, 'LENDARIO', 'Apenas beba'));
+
 --Transacao
 INSERT INTO Transacao_tb VALUES (
     Transacao_tp(
@@ -852,83 +931,6 @@ INSERT INTO Transacao_tb VALUES (
         SYSTIMESTAMP
     )
 );
-
--- Missão 
-INSERT INTO MISSAO_TB
-    VALUES (MISSAO_TP('Missão Principal', 10, 55, 3,
-    OBJETIVOS_TP('Matar o dragão', 'Coletar recompensa', 'Sequestrar o padre')));
-INSERT INTO MISSAO_TB
-    VALUES (MISSAO_TP('Missão Secundária', 10, 55, 3,
-    OBJETIVOS_TP('Falar com o necromante', 'Pescar no Ibura', 'Comer a fruta misteriosa')));
-INSERT INTO MISSAO_TB
-    VALUES (MISSAO_TP('A missão do mestre Ronald', 10, 55, 3,
-    OBJETIVOS_TP('Montar no cavalo', 'Fazer a poção do primeiro amor')));
-INSERT INTO MISSAO_TB
-    VALUES (MISSAO_TP('Um segredo além da Terra', 10, 55, 3,
-    OBJETIVOS_TP('Obter benção da mestre Beatriz')));
-
--- Arma
-INSERT INTO Arma_tb VALUES (Arma_tp('Espada Longa', 5, 200, 500, 10, 'COMUM', 30));
-INSERT INTO Arma_tb VALUES (Arma_tp('Lança do dragão', 25, 12, 123, 10, 'EPICO', 95));
-INSERT INTO Arma_tb VALUES (
-Arma_tp('Martelo do Caos (Cuidado, ele é do caos)', 65, 52, 400, 82, 'LENDARIO', 142)
-);
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Faca de manteiga', 1, 1, 1, 3, 'COMUM', 5));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Cetro clerical', 1, 100, 100, 10, 'COMUM', 20));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Cajado elementar', 1, 100, 100, 10, 'COMUM', 20));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Clava da justiça', 1, 100, 100, 10, 'COMUM', 20));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Espada sanguinária', 1, 100, 100, 10, 'COMUM', 20));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Cetro dos deuses antigos', 15, 10000, 9999, 35, 'LENDARIO', 150));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Cajado de Knaarr', 15, 10000, 10000, 35, 'LENDARIO', 150));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Porrete dos portões de Embiid', 15, 10000, 4872, 50, 'LENDARIO', 150));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Espada do andarilho esquecido', 15, 10000, 3500, 50, 'LENDARIO', 150));
-
-INSERT INTO Arma_tb 
-    VALUES (Arma_tp('Adaga da Regina Maledetta', 15, 10000, 2500, 20, 'LENDARIO', 150));
-
--- Armadura
-INSERT INTO Armadura_tb
-	VALUES (Armadura_tp('Cota de malha', 1, 100, 100, 10, 'COMUM', 20));
-
-INSERT INTO Armadura_tb 
-    VALUES (Armadura_tp('Bandana do naruto', 5, 100, 100, 10, 'RARO', 35));
-
-INSERT INTO Armadura_tb 
-    VALUES (Armadura_tp('Armadura das fadas de Avalon', 15, 5000, 5000, 10, 'EPICO', 105));
-
--- Consumível
-INSERT INTO Consumivel_tb
-    VALUES (Consumivel_tp('Poção de vida', 1, 10, 5, 10, 'COMUM', 'Cura em 50 pontos'));
-
-INSERT INTO Consumivel_tb
-    VALUES (Consumivel_tp('Poção de mana', 1, 5, 5, 10, 'COMUM', 'Restaura 50 pontos de mana'));
-
-INSERT INTO Consumivel_tb
-    VALUES (Consumivel_tp('Poção da invisibilidade', 1, 2500, 1000, 10, 'EPICO', 'Deixa o usuário invisível por 3 minutos'));
-
-INSERT INTO Consumivel_tb
-    VALUES (Consumivel_tp('Poção felix felicius', 1, 2500, 2500, 10, 'EPICO', 'Sua sorte será inigualável por um dia inteiro'));
-
-INSERT INTO Consumivel_tb
-    VALUES (Consumivel_tp('Poção do caos', 1, 7500, 7500, 10, 'LENDARIO', 'Apenas beba'));
 
 -- Locais
 INSERT INTO Locais
